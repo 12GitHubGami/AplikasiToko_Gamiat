@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="KaryawanClasses">
+  <DataContextMoniker Name="/KaryawanClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6a650111-3336-4a85-9787-95d82478d341" absoluteBounds="4, 1.875, 2, 3.1170068359375">
+      <DataClassMoniker Name="/KaryawanClassesDataContext/karyawan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1380cd40-f4dd-4ea0-a584-2000d0178bcc" absoluteBounds="4.015, 2.335, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

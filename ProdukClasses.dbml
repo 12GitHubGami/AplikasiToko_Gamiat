@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DbAppToko" Class="ProdukClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=OPREKIN-PC\SQLEXPRESS;Initial Catalog=DbAppToko;Integrated Security=True" SettingsObjectName="AplikasiToko_Gamiat.Properties.Settings" SettingsPropertyName="DbAppTokoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.barang" Member="barangs">
+    <Type Name="barang">
+      <Column Name="kode_brg" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nama_brg" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="diskon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="harga_jual" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="stok_gudang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="stok_rak" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rusak" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="satuan" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplikasiToko_Gamiat", "AplikasiToko_Gamiat.csproj", "{D0A3FB9B-B318-4481-8A46-21831C9D8D9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0A3FB9B-B318-4481-8A46-21831C9D8D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A3FB9B-B318-4481-8A46-21831C9D8D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A3FB9B-B318-4481-8A46-21831C9D8D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A3FB9B-B318-4481-8A46-21831C9D8D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E807954-3B9A-4C00-A1D1-56F3A784DDF3}
+	EndGlobalSection
+EndGlobal

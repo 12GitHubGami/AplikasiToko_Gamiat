@@ -68,7 +68,7 @@ namespace AplikasiToko_Gamiat
             };
             dbkaryawan.karyawans.InsertOnSubmit(kary);
             dbkaryawan.SubmitChanges();
-            MessageBox.Show("Data Karyawan Berhasil Ditambahkan Menggunakan LINQ!!");
+            MessageBox.Show("Data Karyawan Berhasil Ditambahkan Menggunakan LINQ !!");
             bersih();
             tampilDataKaryawan();
         }

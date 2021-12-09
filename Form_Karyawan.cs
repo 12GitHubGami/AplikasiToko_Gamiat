@@ -111,62 +111,48 @@ namespace AplikasiToko_Gamiat
 
         private void btnEditKaryawan_Click(object sender, EventArgs e)
         {
-            string jk;
+            char jk;
             if (rdLakilaki.Checked)
             {
-                jk = "L";
+                jk = 'L';
             }
             else
             {
-                jk = "P";
+                jk = 'P';
             }
 
+            string  nama_karyawan = txtNama.Text, alamat_karyawan = txtAlamat.Text,
+                kota = txtKota.Text, tempat = txtTempat.Text, agama = cmbAgama.Text,
+                status = cmbStatus.Text, pendidikan = cmbPendidikan.Text
+                ;
+            char jkelamin = Convert.ToChar(jk);
+            int tanggungan = int.Parse(txtTanggungan.Text), no_telp = int.Parse(txtNoTelp.Text);
+            DateTime tgl_lahir = dtTglLahir.Value;
+            var kary = (from c in dbkaryawan.karyawans where c.nik == txtNik.Text select c).First();
+            kary.nama = nama_karyawan;
+            kary.alamat = alamat_karyawan;
+            kary.kota = kota;
+            kary.tempat_lahir = tempat;
+            kary.agama = agama;
+            kary.status_menikah = status;
+            kary.jk = jkelamin;
+            kary.tanggungan = tanggungan;
+            kary.no_telp = no_telp;
+            kary.tgl_lahir = tgl_lahir;
 
-            string coonString = "Data Source=OPREKIN-PC\\SQLEXPRESS ; Initial Catalog=DbAppToko; Integrated Security=True";
-            SqlConnection coon = new SqlConnection(coonString);
-            coon.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE karyawan SET nama=@nama, alamat=@alamat, kota=@kota, tempat_lahir=@tempat_lahir, tgl_lahir=@tgl_lahir," +
-                " agama=@agama, jk=@jk, status_menikah=@status_menikah, tanggungan=@tanggungan, pendidikan=@pendidikan, no_telp=@no_telp WHERE nik=@nik", coon);
-            cmd.Parameters.AddWithValue("@nik", txtNik.Text);
-            cmd.Parameters.AddWithValue("@nama", txtNama.Text);
-            cmd.Parameters.AddWithValue("@alamat", txtAlamat.Text);
-            cmd.Parameters.AddWithValue("@kota", txtKota.Text);
-            cmd.Parameters.AddWithValue("@tempat_lahir", txtTempat.Text);
-            cmd.Parameters.AddWithValue("@tgl_lahir", dtTglLahir.Value);
-            cmd.Parameters.AddWithValue("@agama", cmbAgama.SelectedItem);
-            cmd.Parameters.AddWithValue("@jk", jk);
-            cmd.Parameters.AddWithValue("@status_menikah", cmbStatus.SelectedItem);
-            cmd.Parameters.AddWithValue("@tanggungan", txtTanggungan.Text);
-            cmd.Parameters.AddWithValue("@pendidikan", cmbPendidikan.SelectedItem);
-            cmd.Parameters.AddWithValue("@no_telp", Int32.Parse(txtNoTelp.Text));
-
-            cmd.ExecuteNonQuery();
-
-            coon.Close();
+            dbkaryawan.SubmitChanges();
             MessageBox.Show("Data Karyawan Berhasil Di Edit !!");
-            bersih();
+            
             tampilDataKaryawan();
         }
 
         private void btnHapusKaryawan_Click(object sender, EventArgs e)
         {
-            if (txtNik.Text == "" || txtNik.Text == " ")
-            {
-                MessageBox.Show("Masukkan Nik yang Akan Dihapus !");
-            }
-            else
-            {
-                string coonstring = "Data Source=OPREKIN-PC\\SQLEXPRESS ; Initial Catalog=DbAppToko; Integrated Security=True";
-                SqlConnection conn = new SqlConnection(coonstring);
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM karyawan WHERE nik=@nik", conn);
-                cmd.Parameters.AddWithValue("@nik", txtNik.Text);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Data berhasil Dihapus !");
-                bersih();
-                tampilDataKaryawan();
-            }
+            var kary = (from c in dbkaryawan.karyawans where c.nik == txtNik.Text select c).First();
+            dbkaryawan.karyawans.DeleteOnSubmit(kary);
+            dbkaryawan.SubmitChanges();
+            MessageBox.Show("Data Berhasil Dihapus dengan LINQ!");
+            tampilDataKaryawan();
         }
 
         private void btnKeluarKaryawan_Click(object sender, EventArgs e)

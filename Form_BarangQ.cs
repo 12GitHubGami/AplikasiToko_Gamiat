@@ -52,6 +52,49 @@ namespace AplikasiToko_Gamiat
         private void Form_BarangQ_Load(object sender, EventArgs e)
         {
             tampilData();
+            cmbSatuan.Items.Add("Lusin");
+            cmbSatuan.Items.Add("Buah");
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            string nama_barang = txtNamaBarang.Text,
+                satuan = cmbSatuan.Text;
+            int diskon = int.Parse(txtDiskon.Text), harga_jual = int.Parse(txtHargaJual.Text),
+                stok_gudang = int.Parse(txtGudang.Text), stok_rak = int.Parse(txtRak.Text),
+                rusak = int.Parse(txtRusak.Text);
+
+            var brg = (from b in db.barangs where b.kode_brg == txtKodeBarang.Text select b).First();
+            brg.nama_brg = nama_barang;
+            brg.diskon = diskon;
+            brg.harga_jual = harga_jual;
+            brg.stok_gudang = stok_gudang;
+            brg.stok_rak = stok_rak;
+            brg.rusak = rusak;
+            brg.satuan = satuan;
+            db.SubmitChanges();
+            MessageBox.Show("Data Berhasil Diubah dengan LINQ !");
+            tampilData();
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            var brg = (from b in db.barangs where b.kode_brg == txtKodeBarang.Text select b).First();
+            db.barangs.DeleteOnSubmit(brg);
+            db.SubmitChanges();
+            MessageBox.Show("Data Berhasil Dihapus");
+            tampilData();
+        }
+        private void bersih()
+        {
+            txtKodeBarang.Clear();
+            txtNamaBarang.Clear();
+            txtDiskon.Clear();
+            txtHargaJual.Clear();
+            txtGudang.Clear();
+            txtRak.Clear();
+            txtRusak.Clear();
+            cmbSatuan.SelectedIndex = -1;
         }
     }
 }

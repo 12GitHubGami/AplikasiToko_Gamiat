@@ -16,7 +16,7 @@ namespace AplikasiToko_Gamiat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Karyawan());
+            Application.Run(new Form_Suplier());
         }
     }
 }

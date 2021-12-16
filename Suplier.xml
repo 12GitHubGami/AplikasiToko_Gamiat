@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Supliers>
+  <Suplier>
+    <kode_supp>S0100</kode_supp>
+    <nama_instansi>PT Sinarmas Tbk</nama_instansi>
+    <nama_manager>Josua Michelle</nama_manager>
+    <alamat>Jl. Raya Majusari No 5, Blok A</alamat>
+    <no_telp>0281662622</no_telp>
+    <kontak_person>08992020111</kontak_person>
+    <no_fax>-</no_fax>
+    <email>adm@sinarmas.com</email>
+    <website>www.sinarmasss.com</website>
+  </Suplier>
+  
+</Supliers>

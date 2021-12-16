@@ -70,6 +70,12 @@
     <Compile Include="Form_Karyawan.Designer.cs">
       <DependentUpon>Form_Karyawan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Suplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Suplier.Designer.cs">
+      <DependentUpon>Form_Suplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="KaryawanClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Karyawan.resx">
       <DependentUpon>Form_Karyawan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Suplier.resx">
+      <DependentUpon>Form_Suplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,6 +151,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Suplier.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
